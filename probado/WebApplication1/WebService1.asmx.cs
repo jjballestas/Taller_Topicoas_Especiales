@@ -27,7 +27,7 @@ namespace WebApplication1
 
             var sitio = from result in dc1.sitios
                         where result.lugarcercano.ToString().Contains(desc)
-                        select new { result.descripcion };
+                        select new {result.idsitio, result.descripcion };
 
             JavaScriptSerializer jss = new JavaScriptSerializer();
             if (sitio != null  )
@@ -41,11 +41,49 @@ namespace WebApplication1
             else
             {
                  
-                return "nohaynada";
+                return "no hay nada";
             }
            
 
         }
+
+          [WebMethod]
+          public string getsitionDistancia(double latitud,double longitud )
+          {
+              double deg2radMultiplier = Math.PI / 180;
+              latitud = latitud * deg2radMultiplier;
+              longitud = longitud * deg2radMultiplier;
+              double radius = 6378.137;
+                
+
+              var sitio = from result in dc1.sitios
+                          where   Math.Acos(Math.Sin(latitud) * Math.Sin((double)result.latitud*deg2radMultiplier) +
+                          Math.Cos(latitud) * Math.Cos((double)result.latitud*deg2radMultiplier) * Math.Cos((double)result.latitud -latitud)) * radius<1000
+                          select new
+                          {
+                              codigo = result.idsitio,
+                              descripcion = result.descripcion,
+                              distancia =   Math.Acos(Math.Sin(latitud) * Math.Sin((double)result.latitud * deg2radMultiplier) +
+                                  Math.Cos(latitud) * Math.Cos((double)result.latitud * deg2radMultiplier) * Math.Cos((double)result.latitud - latitud)) * radius
+                          };
+
+              JavaScriptSerializer jss = new JavaScriptSerializer();
+              if (sitio != null)
+              {
+
+
+                  var json = jss.Serialize(sitio);
+                  return json;
+
+              }
+              else
+              {
+
+                  return "no hay nada";
+              }
+
+
+          }
 
 
     }

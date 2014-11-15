@@ -1,25 +1,10 @@
-1- Museo del caribe             10.986167,-74.778813 
-2- Intendencia Fluvial          10.98582,-74.776951
-3- Ccial. Buenavista            11.013513,-74.82706
-4- Catedral Metropolitana       10.988266,-74.790199
-5- Estadio Metropolitano        10.927012,-74.79975
-6- Plaza de los músicos         10.994891,-74.80634
-7- Casa del carnaval            10.993042,-74.787109
-8- Teatro Amira de la Rosa      10.993121,-74.789844
-9- Bocas de ceniza              11.051958,-74.835249
-10- Zoologico de Barranquilla   11.010959,-74.798248
-
-
-Sitios cercanos
----------------------------------------------------
-
-1- Paseo Bolivar, Fedecafé, Alcaldia de Barranquilla, Shopping Center, Gobernacion del Atlantico, Avenida del rio
-2- Paseo Bolivar, Fedecafé, Alcaldia de Barranquilla, Shopping Center, Plaza de la aduana, Avenida del rio
-3- Home center sede norte, Pricemart, Tito's Bolos, Hotel Dann Carlton, Makro
-4- Ccial Portal del prado, Plaza de la paz, Banco de la Republica, Cancha Wembley, Colegio del Carmen, Cunit, Comfamiliar sede centro, Home center sede centro
-5- Ccial Metropolitano, Ccial Metrocentro, Clinica de la policia, Terminal de Transportes, 
-6- Estadio Romelio Martinez, Estadio Elias Chewing, Estación de transmetro Joe Arroyo, La troja, Clinica del Norte, Emisora Atlantico
-7- Estadio Tomas Arrieta, CUC, Ccial Portal del prado, Home center sede centro
-8- Estadio Tomas Arrieta, CUC, Ccial Portal del prado, Universidad Simon Bolivar, Instituto Meyer, Banco Davivienda, Segunda Brigada
-9- Avenida del rio, Monomeros, Argos, Las Flores, 
-10- Almacen Jumbo, Chevrolet Country, Almacen Exito, Muebles Jamar, Hotel Estelar, Home mart, Batallon Paraiso
+1	10.986.167	-74.778.813	 Museo del caribe            	 Paseo Bolivar, Fedecafé, Alcaldia de Barranquilla, Shopping Center, Gobernacion del Atlantico, Avenida del rio
+2	1.098.582	-74.776.951	 Intendencia Fluvial          	 Paseo Bolivar, Fedecafé, Alcaldia de Barranquilla, Shopping Center, Plaza de la aduana, Avenida del rio
+3	11.013.513	-7.482.706	 Ccial. Buenavista          	 Home center sede norte, Pricemart, Tito's Bolos, Hotel Dann Carlton, Makro
+4	10.988.266	-74.790.199	 Catedral Metropolitana      	 Ccial Portal del prado, Plaza de la paz, Banco de la Republica, Cancha Wembley, Colegio del Carmen, Cunit, Comfamiliar sede centro, Home center sede centro
+5	10.927.012	-7.479.975	 Estadio Metropolitano       	 Ccial Metropolitano, Ccial Metrocentro, Clinica de la policia, Terminal de Transportes, 
+6	10.994.891	-7.480.634	 Plaza de los músicos         	 Estadio Romelio Martinez, Estadio Elias Chewing, Estación de transmetro Joe Arroyo, La troja, Clinica del Norte, Emisora Atlantico
+7	10.993.042	-74.787.109	 Casa del carnaval            	 Estadio Tomas Arrieta, CUC, Ccial Portal del prado, Home center sede centro
+8	10.993.121	-74.789.844	 Teatro Amira de la Rosa      	 Estadio Tomas Arrieta, CUC, Ccial Portal del prado, Universidad Simon Bolivar, Instituto Meyer, Banco Davivienda, Segunda Brigada
+9	11.051.958	-74.835.249	 Bocas de ceniza              	 Avenida del rio, Monomeros, Argos, Las Flores, 
+10	11.010.959	-74.798.248	 Zoologico de Barranquilla   	 Almacen Jumbo, Chevrolet Country, Almacen Exito, Muebles Jamar, Hotel Estelar, Home mart, Batallon Paraiso
