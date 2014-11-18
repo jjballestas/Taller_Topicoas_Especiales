@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">obtiene distancia y sitios cercanos a una ubicacion</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getsitiocercano">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getsitiocercanoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getsitiocercanoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getsitionDistancia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lat1" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="lon1" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getsitionDistanciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getsitionDistanciaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getsitiocercanoSoapIn">
+    <wsdl:part name="parameters" element="tns:getsitiocercano" />
+  </wsdl:message>
+  <wsdl:message name="getsitiocercanoSoapOut">
+    <wsdl:part name="parameters" element="tns:getsitiocercanoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getsitionDistanciaSoapIn">
+    <wsdl:part name="parameters" element="tns:getsitionDistancia" />
+  </wsdl:message>
+  <wsdl:message name="getsitionDistanciaSoapOut">
+    <wsdl:part name="parameters" element="tns:getsitionDistanciaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TuristicDataSoap">
+    <wsdl:operation name="getsitiocercano">
+      <wsdl:input message="tns:getsitiocercanoSoapIn" />
+      <wsdl:output message="tns:getsitiocercanoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getsitionDistancia">
+      <wsdl:input message="tns:getsitionDistanciaSoapIn" />
+      <wsdl:output message="tns:getsitionDistanciaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TuristicDataSoap" type="tns:TuristicDataSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getsitiocercano">
+      <soap:operation soapAction="http://tempuri.org/getsitiocercano" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getsitionDistancia">
+      <soap:operation soapAction="http://tempuri.org/getsitionDistancia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TuristicDataSoap12" type="tns:TuristicDataSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getsitiocercano">
+      <soap12:operation soapAction="http://tempuri.org/getsitiocercano" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getsitionDistancia">
+      <soap12:operation soapAction="http://tempuri.org/getsitionDistancia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TuristicData">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">obtiene distancia y sitios cercanos a una ubicacion</wsdl:documentation>
+    <wsdl:port name="TuristicDataSoap" binding="tns:TuristicDataSoap">
+      <soap:address location="http://localhost:50098/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TuristicDataSoap12" binding="tns:TuristicDataSoap12">
+      <soap12:address location="http://localhost:50098/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

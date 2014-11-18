@@ -10,7 +10,7 @@ namespace WebApplication1
     /// <summary>
     /// Descripción breve de WebService1
     /// </summary>
-    [WebService(Namespace = "http://tempuri.org/")]
+    [WebService(Namespace = "http://tempuri.org/", Name = "TuristicData", Description = "obtiene distancia y sitios cercanos a una ubicacion")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // Para permitir que se llame a este servicio web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la línea siguiente. 
@@ -27,7 +27,7 @@ namespace WebApplication1
 
             var sitio = from result in dc1.sitios
                         where result.lugarcercano.ToString().Contains(desc)
-                        select new {result.idsitio, result.descripcion };
+                        select new { codigo = result.idsitio, descripcion = result.descripcion, latitud = result.latitud, longitud = result.longitud };
 
             JavaScriptSerializer jss = new JavaScriptSerializer();
             if (sitio != null  )
@@ -48,23 +48,24 @@ namespace WebApplication1
         }
 
           [WebMethod]
-          public string getsitionDistancia(double latitud,double longitud )
+          public string getsitionDistancia(double lat1, double lon1)
           {
               double deg2radMultiplier = Math.PI / 180;
-              latitud = latitud * deg2radMultiplier;
-              longitud = longitud * deg2radMultiplier;
+              lat1 = lat1 * deg2radMultiplier;
+              lon1 = lon1 * deg2radMultiplier;
               double radius = 6378.137;
-                
+
+
 
               var sitio = from result in dc1.sitios
-                          where   Math.Acos(Math.Sin(latitud) * Math.Sin((double)result.latitud*deg2radMultiplier) +
-                          Math.Cos(latitud) * Math.Cos((double)result.latitud*deg2radMultiplier) * Math.Cos((double)result.latitud -latitud)) * radius<1000
+                          where Math.Acos( Math.Sin(lat1) * Math.Sin( (double)result.latitud * deg2radMultiplier) +
+                          Math.Cos(lat1) * Math.Cos((double)result.latitud * deg2radMultiplier) * Math.Cos(((double)result.latitud * deg2radMultiplier) - lat1)) * radius <= 100000
                           select new
                           {
                               codigo = result.idsitio,
                               descripcion = result.descripcion,
-                              distancia =   Math.Acos(Math.Sin(latitud) * Math.Sin((double)result.latitud * deg2radMultiplier) +
-                                  Math.Cos(latitud) * Math.Cos((double)result.latitud * deg2radMultiplier) * Math.Cos((double)result.latitud - latitud)) * radius
+                              distancia = Math.Acos(Math.Sin(lat1) * Math.Sin((double)result.latitud * deg2radMultiplier) +
+                                  Math.Cos(lat1) * Math.Cos((double)result.latitud * deg2radMultiplier) * Math.Cos(((double)result.latitud * deg2radMultiplier)- lat1)) * radius
                           };
 
               JavaScriptSerializer jss = new JavaScriptSerializer();
